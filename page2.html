@@ -88,5 +88,21 @@
     <video src="robbed.mp4" width="800" controls></video>
   </div>
 
-</body>
+<script> src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  let count = 0;
+
+  function capyClick() {
+    count = count + 1;
+    document.querySelector("#counter").innerText = "clicks: " + count;
+
+    if (count === 100) {
+      confetti({
+        particleCount: 200,
+        spread: 160,
+        origin: { y: 0.6 }
+      });
+    }
+  }
+</script></body>
 </html>
